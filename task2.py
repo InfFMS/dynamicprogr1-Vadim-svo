@@ -14,3 +14,15 @@
 PRICE = [0, 1, 2, 1, 3, 1, 2, 1, 3, 1, 2, 1, 3, 1, 2, 1] 
 
 # Решение будет здесь
+min_way = [9999999]*16
+
+min_way[0] = 0
+
+for i in range(16):
+    for step in [1, 2, 4]:
+        if i + step < 16:
+            if (min_way[i] + PRICE[i + step]) < min_way[i + step]:
+                min_way[i + step] = min_way[i] + PRICE[i + step]
+
+
+print(min_way[15])
