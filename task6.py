@@ -11,3 +11,16 @@ G(n) = G(n - 4) + n, если n > 25
 """
 
 # Решение будет здесь
+
+n = 150774
+resg = [0]*(n+1)
+resf = []
+
+for i in range(25):
+    resg[i] = 2 * (n+1)
+
+for i in range(n):
+    if n > 25:
+        resg[i] = resg[i-4] + i
+
+print(resg[n-1] - resg[n-5])

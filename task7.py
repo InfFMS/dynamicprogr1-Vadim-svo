@@ -11,3 +11,16 @@ F(n) = n / 2 + F(n - 1) + 2 при n > 1 и n — чётно
 """
 
 # Решение будет здесь
+
+n = 49
+resf = [0] * (n+1)
+resf[0] = 0
+resf[1] = 0
+
+for i in range(2, n+1):
+    if i % 2 == 0:
+        resf[i] = i // 2 + resf[i-1] + 2
+    if i % 2 != 0:
+        resf[i] = resf[i-1] + 3 * i ** 2
+
+print(resf[-1])

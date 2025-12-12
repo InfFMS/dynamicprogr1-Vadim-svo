@@ -11,3 +11,14 @@
 """
 
 # Решение будет здесь
+
+def pwin1(s):
+    if (s-2) >= 349 or (s-3) >= 349 or ((s % 3 == 0) and (s//3) >= 349):
+        return True
+    else: return False
+
+def plose1(s):
+    if (s-2) >= 349 or (s-3) >= 349 or ((s % 3 == 0) and (s//3) >= 349)
+
+
+print(pwin1(352))

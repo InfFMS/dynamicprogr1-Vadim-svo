@@ -16,3 +16,20 @@ GRID = [
 ]
 
 # Решение будет здесь
+min_way = [[999 for _ in range(4)] for _ in range(4)]
+
+min_way[0][0] = 10
+
+
+for x in range(4):
+    for y in range(4):
+        if x + 1 < 4:
+            if GRID[x+1][y] + min_way[x][y] < min_way[x+1][y]:
+                min_way[x+1][y] = GRID[x+1][y] + min_way[x][y]
+
+        if y + 1 < 4:
+            if GRID[x][y+1] + min_way[x][y] < min_way[x][y+1]:
+                min_way[x][y+1] = GRID[x][y+1] + min_way[x][y]
+
+
+print(min_way[3][3])
