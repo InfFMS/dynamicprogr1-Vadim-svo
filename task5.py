@@ -8,3 +8,15 @@
 """
 
 # Решение будет здесь
+
+S = int(input())
+
+ways = [0]*(S+1)
+ways[0] = 1
+nom = [1, 2, 5]
+
+for c in nom:
+    for i in range(c, S+1):
+        ways[i] += ways[i-c]
+
+print(ways[-1])
